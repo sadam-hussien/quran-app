@@ -1,0 +1,121 @@
+@import "../../../scss/vars/vars";
+@import "../../../scss/helpers/mixins";
+
+.filter-section {
+    margin-bottom: $large;
+    $height: 40px;
+
+    // start search-filter
+    .search-filter {
+        input {
+            @include inpt;
+        }
+    }
+    // ==== end search-filter
+
+    // start select-filter
+    .select-filter {
+        @media (max-width: 767px) {
+            margin-top: $medium;
+        }
+        .select-item__control {
+            @include inpt;
+
+            .select-item__placeholder {
+                color: rgba($text-color, .8);
+                font-size: .9rem;
+                margin: 0;
+            }
+
+            .css-b8ldur-Input {
+                color: $main-color;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+
+            }
+
+            .select-item__indicators {
+                .select-item__indicator-separator {
+                    display: none;
+                }
+                .select-item__indicator {
+                    padding: 0;
+                    color: rgba($text-color, .2);
+                }
+            }
+
+            &.select-item__control--is-focused {
+                border-color: transparent;
+                box-shadow: none !important;
+            }
+
+            &.select-item__control--menu-is-open {
+                border-color: $main-color !important;
+                box-shadow: none !important;
+
+                .select-item__indicators {
+                    .select-item__indicator {
+                        color: $main-color;
+                    }
+                }
+
+            }
+        }
+        .select-item__menu {
+            margin-top: $medium;
+            margin-bottom: 0;
+            background: $white-color;
+            box-shadow: 0 0 10px rgba($text-color, .2);
+            border-radius: 5px;
+
+            &::before {
+                $si: 9px;
+                content: "";
+                position: absolute;
+                top: -$si * 2;
+                left: $medium;
+                border-width: $si;
+                border-style: solid;
+                border-color: transparent transparent $white-color;
+                z-index: 9;
+            }
+
+            .select-item__menu-list {
+                padding: 0;
+
+                .select-item__option {
+                    padding: $small $medium;
+                    color: $text-color;
+                    cursor: pointer;
+
+                    &.select-item__option--is-selected, &.select-item__option--is-focused {
+                        background: $main-color;
+                        color: $white-color;
+                    }
+                }
+            }
+
+        }
+    }
+    // ==== end select-filter
+
+    // start change-layout
+    .change-layout {
+        button {
+            border: none;
+            background: transparent;
+            padding: 0;
+            opacity: .25;
+            transition: opacity .5s;
+            &:last-child {
+                margin-right: $small / 2;
+            }
+            &:hover, &.active {
+                opacity: 1;
+            }
+        }
+    }
+    // ==== end change-layout
+
+}

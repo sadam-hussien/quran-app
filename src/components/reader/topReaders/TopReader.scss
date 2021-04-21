@@ -1,0 +1,134 @@
+@import "../../../scss/vars/vars";
+
+.top-readers {
+    margin-bottom: $large;
+    // start title
+    .title {
+        margin-bottom: $medium;
+        .title-text {
+            // color: $text-sub-color;
+            margin-bottom: 0;
+        }
+    }
+    // === end title
+
+    .readers-slides {
+        $size: 50px;
+        .box {
+            padding: $medium;
+            background: $white-color;
+            box-shadow: 0 0 10px rgba($text-color, .1);
+            border-radius: 15px;
+            text-align: center;
+
+            .img {
+                width: $size;
+                height: $size;
+                line-height: $size - 5px;
+                text-align: center;
+                border-radius: 50%;
+                // background: rgba($main-color, .1);
+                background: $white-color;
+                box-shadow: 0 0 0 10px rgba($main-color, .1), 0 0 10px 1px rgba($text-color, .2);
+                margin: 0 auto $medium + 10px;
+            }
+
+            // start details
+            .details {
+
+                .name {
+                    margin-bottom: $medium;
+                    color: $text-color;
+                    font-weight: bold;
+                }
+
+                .stats {
+                    margin-bottom: $medium;
+                    .icon {
+                        margin-left: $small;
+                    }
+                    b {
+                        display: block;
+                        text-align: right;
+                        color: $main-color;
+                        margin-bottom: -2px;
+
+                        & + span {
+                            color: $text-color;
+                            opacity: .9;
+                            font-size: .9rem;
+                        }
+                    }
+                }
+
+            }
+            // ==== end details
+
+            // start follow-btn
+            .follow-btn {
+                background: $main-color;
+                color: $white-color;
+                min-width: 120px;
+                height: 42px;
+                border-radius: 25px;
+                border: 1px solid $main-color;
+                font-size: 1.1rem;
+                text-transform: capitalize;
+                padding: 0 $medium 2px;
+                transition: .3s;
+
+                &:hover {
+                    background: transparent;
+                    color: $main-color;
+                }
+
+                &.following {
+                    background: transparent;
+                    color: $main-color;
+                    padding-bottom: 6px;
+                    span span {
+                        margin-left: $small;
+                    }
+                }
+            }
+            // ===== end follow-btn
+        }
+
+        .swiper-container {
+            overflow: visible;
+
+            .swiper-button-prev, .swiper-button-next {
+                $btn: 40px;
+                top: -$medium;
+                transform: translateY(-35%);
+                width: $btn;
+                height: $btn;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $white-color;
+                border-radius: 5px;
+                right: auto !important;
+                left: 0;
+
+                &:hover {
+                    background: $main-color;
+                    &::after {
+                        color: $white-color;
+                    }
+                }
+
+                &::after {
+                    font-size: 1.4rem;
+                    color: $main-color;
+                }
+
+                &.swiper-button-prev {
+                    left: $btn + $medium;
+                }
+            }
+
+        }
+    }
+
+}

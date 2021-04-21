@@ -1,0 +1,72 @@
+@import "../../../scss/vars/vars";
+
+aside {
+    @media (min-width: 991px) {
+        padding-left: 15px;
+        position: fixed;
+    }
+
+    @media (max-width: 991px) {
+        padding-bottom: 0 !important;
+    }
+    
+
+    // start head-area
+    .head-area {
+        background: $main-color;
+        padding: $medium;
+        border-radius: 15px;
+        margin-bottom: $large;
+
+        .icon {
+            margin-right: $medium;
+        }
+
+        .text {
+            margin-bottom: 0;
+            color: $white-color;
+            &:first-of-type {
+                margin-bottom: $small;
+            }
+        }
+
+        @media (max-width: 991px) {
+            height: 200px;
+
+            .icon .icon {
+                width: 170px;
+                max-height: 50%;
+            }
+        }
+    }
+    // ==== end head-area
+
+    .box-info-icon {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    // start body-area
+    .body-area {
+
+        .global-info {
+            gap: $large;
+        }
+
+        .box-info {
+            padding-bottom: $large;
+            border-bottom: 1px solid rgba($text-color, .1);
+            .box-info-title {
+                color: $main-color;
+                margin-bottom: $small;
+            }
+            .box-info-response {
+                margin-bottom: 0;
+                color: $text-sub-color;
+            }
+        }
+    }
+    // ===== end body-area
+
+}

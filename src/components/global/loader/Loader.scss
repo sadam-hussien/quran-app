@@ -1,0 +1,51 @@
+@import "../../../scss/vars/vars";
+
+.loader-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(50vh - (#{$header-height + $large}));
+	width: 100%;
+}
+.loader-container > div {
+	$size: 50px;
+	width: $size;
+	height: $size;
+	border-radius: 100%;
+	margin: $small;
+	background-image: linear-gradient(145deg, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0) 100%);
+	animation: bounce 1.5s 0.5s linear infinite;
+}
+.loader-yellow {
+	background-color: $main-color;
+}
+
+.loader-red {
+	background-color: #e91e63;
+	animation-delay: 0.2s;
+}
+
+.loader-blue {
+	background-color: #f44336;
+	animation-delay: 0.4s;
+}
+
+.loader-violet {
+	background-color: #673ab7;
+	animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+	0%, 50%, 100% {
+		transform: scale(1);
+		filter: blur(0px);
+	}
+	25% {
+		transform: scale(0.5);
+		filter: blur(2px);
+	}
+	75% {
+		filter: blur(2px);
+		transform: scale(1.3);
+	}
+}

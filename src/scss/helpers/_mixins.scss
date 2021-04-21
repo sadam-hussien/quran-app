@@ -1,0 +1,18 @@
+@mixin inpt {
+    $height: 40px;
+    background: $white-color;
+    height: $height;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    padding: 0 $medium 5px;
+    color: $main-color;
+    transition: border .3s;
+    &::placeholder {
+        color: rgba($text-color, .8);
+        font-size: .9rem;
+    }
+    &:focus {
+        border-color: $main-color;
+        box-shadow: none;
+    }
+}

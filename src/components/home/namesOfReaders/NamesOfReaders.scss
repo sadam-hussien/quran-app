@@ -1,0 +1,51 @@
+@import "../../../scss/vars/vars";
+
+.names-of-readers {
+    $size: 35px;
+    .item {
+        background: $white-color;
+        padding: $medium;
+        margin-bottom: $medium;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba($text-color, .01);
+        position: relative;
+        transition: all .5s;
+
+        &:hover {
+            transform: scale(1.06);
+            z-index: 99999;
+        }
+
+        .top-area {
+            margin-bottom: $small;
+            .add-to-favourite {
+                background: transparent;
+                border: none;
+                padding: 0;
+            }
+            .box-num {
+                width: $size;
+                height: $size;
+                line-height: $size;
+                text-align: center;
+                background: rgba($main-color, .1);
+                border-radius: 50%;
+                color: $main-color;
+                font-weight: bold;
+                font-size: .8rem;
+            }
+        }
+
+        .box-name {
+            color: $text-sub-color;
+            margin-bottom: $small;
+            font-weight: bold;
+            font-size: .9rem;
+        }
+
+        .box-rewaya {
+            margin-bottom: 0;
+            color: $text-color;
+        }
+    }
+}
