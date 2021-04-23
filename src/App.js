@@ -29,7 +29,6 @@ function App({loadReaders}) {
       document.documentElement.setAttribute("lang", "ar");
 
       document.documentElement.setAttribute("dir", "rtl");
-
   }, []);
 
   return (
