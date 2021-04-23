@@ -24,12 +24,12 @@ function App({loadReaders}) {
   }, [loadReaders]);
 
   // for arabic language
-  useEffect( () => {
+  // useEffect( () => {
 
-      document.documentElement.setAttribute("lang", "ar");
+  //     document.documentElement.setAttribute("lang", "ar");
 
-      document.documentElement.setAttribute("dir", "rtl");
-  }, []);
+  //     document.documentElement.setAttribute("dir", "rtl");
+  // }, []);
 
   return (
     <BrowserRouter>
