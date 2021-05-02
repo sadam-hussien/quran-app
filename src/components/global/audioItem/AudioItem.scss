@@ -74,5 +74,27 @@
     }
     // ==== end options-btn
 
+    // tsrat download-btn
+    .download-btn {
+        padding: 0;
+        border: none;
+        background: transparent;
+        margin-right: $small;
+        margin-top: -5px;
+
+        path {
+            stroke: $text-color;
+        }
+    }
+
+    &.active {
+        .download-btn {
+            path {
+                stroke: $white-color;
+            }
+        }
+    }
+    // ==== end download-btn
+
 }
 // ==== end audio-item

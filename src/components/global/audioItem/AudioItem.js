@@ -4,13 +4,14 @@ import {connect} from "react-redux";
 
 import {AddSurahFav, RemoveSurahFav, ChangeMedia} from "../../../store/actions";
 
-import {IconShare, IconPlay, IconPause} from "../../svg";
+import {IconShare, IconPlay, IconPause, IconDownload} from "../../svg";
 
 import {Colors} from "../../../constants";
 
 import {FavouriteBtn} from "../../global";
 
 import "./AudioItem.scss";
+import axios from "axios";
 
 const AudioItem = ({surahData, index, uid, name, rewaya, ChangeMedia, AddSurahFav, RemoveSurahFav, mediaPlaying}) => {
 
@@ -27,6 +28,21 @@ const AudioItem = ({surahData, index, uid, name, rewaya, ChangeMedia, AddSurahFa
 
     const handleMedia = () => {
         ChangeMedia(index);
+    }
+
+    const download = () => {
+        axios({
+            url: surahData.url,
+            method: "GET",
+            responseType: "blob",
+        }).then(response => {
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", surahData.name + ".mp3");
+            document.body.appendChild(link)
+            link.click();
+        })
     }
 
     return (
@@ -68,6 +84,10 @@ const AudioItem = ({surahData, index, uid, name, rewaya, ChangeMedia, AddSurahFa
                         rewaya: rewaya,
                         surahData
                     }} favAdd={AddSurahFav} favRemove={RemoveSurahFav}/>
+
+                    <button type="button" className="download-btn" onClick={download}>
+                        <IconDownload style={{width: ".9rem", height: "auto", fill: Colors.textSubColor}} />
+                    </button>
 
                 </div>
 

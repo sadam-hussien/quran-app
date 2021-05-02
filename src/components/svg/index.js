@@ -259,3 +259,26 @@ export const IconLeft = ({style}) => {
         </svg>
     );
 }
+
+export const IconDownload = ({style}) => {
+    return (
+        <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="22"
+            viewBox="0 0 20 22"
+            style={{...style}}>
+            <path
+                fill="none"
+                fillRule="evenodd"
+                stroke="#000"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M0 15v3a2 2 0 002 2h14a2 2 0 002-2v-3M5 10l4 4 4-4M9 0v14"
+                transform="translate(1 1)"
+            ></path>
+        </svg>
+    );
+}
