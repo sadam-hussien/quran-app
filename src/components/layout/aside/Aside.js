@@ -28,7 +28,7 @@ const Aside = () => {
             <div className="head-area">
                 <div className="row align-items-center">
                     <div className="col-4">
-                        <h5 className="text">القرءان</h5>
+                        <h5 className="text">القرآن</h5>
                         <h3 className="text">الكريم</h3>
                     </div>
                     <div className="col-8">

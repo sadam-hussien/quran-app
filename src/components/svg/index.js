@@ -212,3 +212,50 @@ export const IconShare = ({style}) => {
         </svg>
     );
 }
+
+export const IconPause = ({style}) => {
+    return (
+        <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+            style={{...style}}>
+            <path d="M191 112v288h-47V112h47m16-16h-79v320h79V96zm161 16v288h-47V112h47m16-16h-79v320h79V96z"></path>
+        </svg>
+    );
+}
+
+export const IconClose = ({style}) => {
+    return (
+        <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            style={{...style}}>
+            <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
+            <path fill="none" d="M0 0h48v48H0z"></path>
+        </svg>
+    );
+}
+
+export const IconLeft = ({style}) => {
+    return (
+        <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            data-name="Layer 1"
+            viewBox="0 0 512 512"
+            style={{...style}}>
+            <g data-name="&lt;Group&gt;">
+                <path
+                d="M145 279L449 279 449 233 145 233 145 174.182 63.121 256.061 145 337.939 145 279z"
+                data-name="&lt;Path&gt;"
+                ></path>
+            </g>
+        </svg>
+    );
+}

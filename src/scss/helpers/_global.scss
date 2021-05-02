@@ -14,7 +14,7 @@ a:hover {
 
 .padding-vertical {
     padding-top: $large;
-    padding-bottom: $large;
+    padding-bottom: $large * 2;
 }
 
 .page {
@@ -30,3 +30,21 @@ input, button, textarea, select {
         box-shadow: none;
     }
 }
+
+// start title
+.title {
+    margin-bottom: $medium;
+    padding: 0 $small;
+    border-right: 3px solid rgba($main-color, .3);
+    .title-text {
+        color: $text-color;
+        margin-bottom: 0;
+    }
+}
+
+.back-btn {
+    width: 50px;
+    height: 35px;
+    background: $white-color;
+    border-radius: 5px;
+}   

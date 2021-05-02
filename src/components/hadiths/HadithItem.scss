@@ -1,0 +1,76 @@
+@import "../../scss/style.scss";
+
+@mixin para {
+    line-height: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+@mixin btnshape {
+    $size: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: $main-color;
+    text-align: center;
+    line-height: $size;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: translate(25%, -50%);
+    color: $white-color;
+
+} 
+
+body {
+    counter-reset: hadithCounter;
+}
+
+.hadith-item {
+    padding: $medium;
+    // padding: ;
+    margin-top: $large;
+    background: $white-color;
+    box-shadow: 0 0 10px rgba($text-color, .1);
+    border-radius: 5px;    
+    counter-increment: hadithCounter;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: counter(hadithCounter);
+        @include btnshape;
+    }
+
+    .hadith-item-content {
+        .hadith-item-content-inner {
+            @include para;
+        }
+    }
+
+    .selected-hadith {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        background: rgba($text-sub-color, .8);
+        overflow-y: auto;
+
+        .hadith-item-content-inner {
+            @include para;
+        }
+
+        // .close-btn {
+        //     @include btnshape;
+        //     border: none;
+        //     transform: translate(25%, -175%);
+        // }
+
+    }
+
+}

@@ -2,6 +2,10 @@ import React, { Fragment, useEffect, useState } from "react";
 
 import {useParams} from "react-router-dom";
 
+import {connect} from "react-redux";
+
+import {HandleMedia, ChangeMedia} from "../../store/actions";
+
 import axios from "axios";
 
 import TopReader from "../../components/reader/topReaders/TopReader";
@@ -10,7 +14,7 @@ import Surah from "../../components/reader/surah/Surah";
 
 import { Loader } from "../../components/global";
 
-const Reader = () => {
+const Reader = ({HandleMedia, ChangeMedia}) => {
 
     let {id} = useParams();
 
@@ -22,9 +26,11 @@ const Reader = () => {
         axios.get(`https://qurani-api.herokuapp.com/api/reciters/${id}`)
             .then( response => {
                 setReader(response.data);
-            });
+                ChangeMedia(0);
+                HandleMedia(response.data.surasData);
+            }).catch(e => console.log(e, "from here ya"))
 
-    }, [id])
+    }, [id, HandleMedia, ChangeMedia])
 
     return (
         <section className="reader-page page">
@@ -41,4 +47,4 @@ const Reader = () => {
 
 }
 
-export default Reader;
+export default connect(null, {HandleMedia, ChangeMedia})(Reader);

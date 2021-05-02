@@ -1,26 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 
-import AudioList from "./audioList/AudioList";
-
-import AudioPlayer from 'react-h5-audio-player';
-
-import 'react-h5-audio-player/src/styles.scss';
+import {AudioItem} from "../../global";
 
 import "./Surah.scss";
 
 const Surah = ({surah}) => {
-
-    const [media, setMedia] = useState(null);
-
-    useEffect( () => {
-
-        surah !== null && setMedia(surah.surasData[0].url);
-
-    }, [surah])
-
-    const changeMedia = (src) => {
-        setMedia(src);
-    }
 
     return (
         <section className="surahs">            
@@ -37,25 +21,16 @@ const Surah = ({surah}) => {
                         <div className="row">
                             {
                                 surah.surasData.map((item, index) => (
-                                    <AudioList 
+                                    <AudioItem 
                                         key={item.id}
+                                        index={index}
                                         surahData={item}
                                         name={surah.name}
                                         rewaya={surah.rewaya}
-                                        uid={surah.id}
-                                        changeMedia={changeMedia}
-                                        active={index === 0 ? "active" : ""} />
+                                        uid={surah.id} />
                                 ))
                             }
                         </div>
-                    </div>
-
-                    {/* start audio-player  */}
-                    <div className="audio-player">
-                        <AudioPlayer
-                            src={media}
-                            autoPlay={false}
-                        />
                     </div>
 
                 </Fragment>

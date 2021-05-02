@@ -1,0 +1,51 @@
+@import "../../scss/style.scss";
+
+.hidith-book {
+    background: $white-color;
+    padding: $medium;
+    box-shadow: 0 0 10px rgba($text-color, .01);
+    margin-bottom: 30px;
+    border-radius: 5px;
+    position: relative;
+    min-height: 115px;
+
+    .info {
+        .name {
+            color: $text-sub-color;
+            font-weight: bold;
+            margin-bottom: $small;
+        }
+        .available {
+            .av-text {
+                margin-bottom: 0;
+                margin-left: $small;
+                color: $text-color;
+            }
+            .av-num {
+                color: $main-color;
+                font-size: .9rem;
+            }
+        }
+    }
+
+    .icon {
+        position: absolute;
+        bottom: $medium;
+        left: $medium + 7px;
+    }
+
+    .index {
+        position: absolute;
+        top: $medium;
+        left: $medium;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        background: rgba($main-color, 0.1);
+        color: $main-color;
+        font-weight: bold;
+        font-size: .8rem;
+        border-radius: 50%;
+    }
+}

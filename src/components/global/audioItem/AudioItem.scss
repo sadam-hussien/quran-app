@@ -1,0 +1,78 @@
+@import "../../../scss/style.scss";
+
+// start audio-item
+.audio-item {
+    margin-bottom: $medium;
+    background: $white-color;
+    padding: $small $medium;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba($text-color, .1);
+    overflow: hidden;
+    transition: all .3s;
+
+    &:hover, &.active {
+        .play-btn {
+            box-shadow: 0 0 0 600px $main-color;
+        }
+        .id {
+            color: $white-color;
+        }
+        .name {
+            color: $white-color;
+        }
+        .left .icon {
+            fill: $white-color !important;
+        }
+    }
+
+    // start play-btn
+    .play-btn {
+        $size: 35px;
+        background: rgba($main-color, .1);
+        border: none;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 4px;
+        margin-left: $small;
+        transition: .3s;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 600px $main-color;
+        }
+    }
+    // ==== end play-btn
+
+    // start id
+    .id {
+        color: $text-color;
+        font-size: .9rem;
+        margin-left: $small;
+    }
+    // === end id
+
+    // start name
+    .name {
+        margin-bottom: 0;
+        color: $text-sub-color;
+    }
+    // === end name
+
+    // start options-btn
+    .options-btn {
+        background: transparent;
+        border: none;
+        padding: 0;
+
+        &.fav-in {
+        }
+    }
+    // ==== end options-btn
+
+}
+// ==== end audio-item

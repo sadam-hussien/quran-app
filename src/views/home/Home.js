@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import {connect} from "react-redux";
+
+import {loadReaders} from "../../store/actions";
 
 import Filters from "../../components/home/filters/Filters";
 
@@ -6,13 +10,22 @@ import NamesOfReaders from "../../components/home/namesOfReaders/NamesOfReaders"
 
 import "./Home.scss";
 
-const Home = () => {
+const Home = ({namesOfReaders, loadReaders}) => {
 
     const [search, setSearch] = useState("");
     
     const [selected, setSelected] = useState("");
 
     const [layout, setLayout] = useState("horizontal");
+
+    // load readers
+    useEffect( () => {
+
+        if (namesOfReaders.length === 0) {
+            loadReaders();
+        }
+
+    }, [loadReaders, namesOfReaders]);
 
     const handleChange = (value) => {
         setSearch(value);
@@ -35,4 +48,10 @@ const Home = () => {
 
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        namesOfReaders: state.namesOfReaders
+    }
+}
+
+export default connect(mapStateToProps, {loadReaders})(Home);

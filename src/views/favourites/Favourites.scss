@@ -1,0 +1,76 @@
+@import "../../scss/style.scss";
+
+.favourites-page {
+    background: linear-gradient(to bottom, rgba($text-sub-color, .6), rgba($text-sub-color, .7)), url(../../assets/favbg.jpg) !important;
+    background-size: cover !important;
+    min-height: calc(100vh - (#{$header-height + $large}));
+
+    .fav-box {
+        margin-bottom: $large;
+
+        .title {
+            margin-bottom: $medium;
+            padding: 0 $small 0 0;
+            border-right: 2px solid $main-color;
+            .title-text {
+                color: $white-color;
+            }
+        }
+
+        .items {
+            .item {
+                background: rgba($white-color, .9);
+                padding: $medium;
+                border-radius: 5px;
+                margin-bottom: 30px;
+                cursor: pointer;
+                transition: .3s;
+
+                &:hover {
+                    background: $white-color;
+                    transform: scale(1.04);
+                }
+
+                a {
+                    color: $text-sub-color;
+                    flex-grow: 2;
+
+                    .box-name {
+                        font-weight: bold;
+                        margin-bottom: 7px;
+                    }
+
+                    .box-rewaya {
+                        color: $text-color;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                    }
+
+                }
+                .icon-wrapper {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: rgba($main-color, .13);
+                    border: none;
+                    padding: 0;
+                    transition: .3s;
+                    &:hover {
+                        background: $main-color;
+
+                        .icon {
+                            fill: $white-color !important;
+                        }
+                    }
+                    
+                }
+            }
+
+            .its-empty {
+                color: $white-color;
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

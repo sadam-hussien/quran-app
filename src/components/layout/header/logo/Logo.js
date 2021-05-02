@@ -13,7 +13,7 @@ const Logo = () => {
             <span className="logo-img d-flex align-items-center justify-content-center">
                 <IconLogo style={logoImgStyle}/>
             </span>
-            <h3 className="logo-text">قرءان</h3>
+            <h3 className="logo-text">قرآن</h3>
         </div>
     )
 

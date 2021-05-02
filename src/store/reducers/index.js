@@ -1,4 +1,15 @@
-import {LOAD_READERS, ADD_SURAH_FAV, REMOVE_SURAH_FAV, ADD_READER_FAV, REMOVE_READER_FAV, ADD_FOLLOWER, REMOVE_FOLLOWER} from "../types";
+import {
+    LOAD_READERS,
+    LOAD_HADITH,
+    ADD_SURAH_FAV,
+    REMOVE_SURAH_FAV,
+    ADD_READER_FAV, 
+    REMOVE_READER_FAV, 
+    ADD_FOLLOWER, 
+    REMOVE_FOLLOWER,
+    HANDLE_MEDIA,
+    CHANGE_MEDIA
+} from "../types";
 
 const AppReducer = (state, action) => {
 
@@ -8,7 +19,15 @@ const AppReducer = (state, action) => {
         case LOAD_READERS:
             return {
                 ...state,
-                namesOfReaders: action.payload
+                namesOfReaders: [...action.payload]
+            }
+        // *******
+
+        // start load hadith
+        case LOAD_HADITH:
+            return {
+                ...state,
+                hadithBooks: [...action.payload]
             }
         // *******
 
@@ -61,8 +80,25 @@ const AppReducer = (state, action) => {
                 ...state,
                 followers
             }
-
         // ************
+
+        // start handle media
+        case HANDLE_MEDIA:
+            const media = action.payload;
+            return {
+                ...state,
+                media
+            }
+        // ***********
+
+        // start change media
+        case CHANGE_MEDIA:
+            const mediaPlaying = action.payload;
+            return {
+                ...state,
+                mediaPlaying
+            }
+        // *****
 
         default:
             return state;
